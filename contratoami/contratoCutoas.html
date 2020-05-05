@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contrato Lector AMI Virtual</title>
+    <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+    <meta name="theme-color" content="#205ea3" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#205ea3" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#205ea3" />
+    <!-- Favicons -->
+    <link href="favicon.png" rel="icon" />
+    <link href="apple-touch-icon-precomposed.png" rel="apple-touch-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="sticky-top">
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+          <div class="col-md-8">
+            <img src="./assets/img/logo.png" alt="logo lector ami visrtual" />
+          </div>
+          <div class="col-md-4">
+            <a
+              href="https://wa.me/573213202115?text=Me%20gustaría%20recibir%20más%20información"
+              class="whatsapp"
+              target="_blank"
+            >
+              <h3><i class="fab fa-whatsapp"></i> 321 320 21 15</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 formcontent">
+            <h1>Información del contrato</h1>
+            <form
+              class="ui form"
+              id="formularioPago"
+              action="./savedata.php"
+              method="POST"
+            >
+              <input type="hidden" name="asesor" id="asesor" value="" />
+              <div class="form-group">
+                <label>Nombre Completo del Titular del Contrato</label>
+                <input
+                  type="text"
+                  onchange="contratoCutoas()"
+                  class="form-control"
+                  name="nombre"
+                  id="nombre"
+                  placeholder="Nombre Completo del Titular"
+                />
+              </div>
+              <div class="form-group">
+                <label>Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="direccion"
+                  id="direccion"
+                  placeholder="Dirección"
+                />
+              </div>
+              <div class="form-group">
+                <label>Ciudad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="ciudad"
+                  id="ciudad"
+                  placeholder="Ciudad"
+                />
+              </div>
+              <div class="form-group">
+                <label>No de identificación</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="noIdentificacion"
+                  id="noIdentificacion"
+                  placeholder="no Identificación"
+                />
+              </div>
+              <div class="form-group">
+                <label>Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="telefono"
+                  id="telefono"
+                  placeholder="Telefono"
+                />
+              </div>
+              <div class="form-group">
+                <label>Correo Electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Correo Electronico"
+                />
+              </div>
+              <div id="contratocontenedor"></div>
+              <div id="contratoInput" style="display: none;"></div>
+              <br />
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="SI"
+                  name="terminos"
+                  id="terminos"
+                />
+                <label class="form-check-label" for="terminos">
+                  Acepto estos términos y deseo continuar.
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="SI"
+                  name="terminosCompra"
+                  id="terminosCompra"
+                />
+                <label class="form-check-label" for="terminosCompra">
+                  Entiendo que los anteriores Términos de Compra tienen una
+                  fecha de ejemplo del acuerdo final (el "contrato"). Reconozco
+                  que recibiré el contrato efectivo final por correo electrónico
+                  al recibir el pago.
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="SI"
+                  name="terminosCusro"
+                  id="terminosCusro"
+                />
+                <label class="form-check-label" for="terminosCusro">
+                  Término del Curso: Entiendo y acepto que estoy comprando un programa de doce (12) meses por cuotas; y después que termine la duración, el programa se renovará automáticamente cada mes para que pueda continuar disfrutando el servicio.
+                </label>
+              </div>
+              <button
+                type="submit"
+                id="pago"
+                class="btn btn-success btn-lg btn-block"
+              >
+                Enviar Contrato
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="terminosdoc"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalCenterTitle">
+              Política de Privacidad de Datos
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              LECTOR AMI pone en conocimiento de los usuarios de
+              www.lectorami.com, su política de protección de datos de carácter
+              personal, para que los usuarios determinen libre y voluntariamente
+              si desean facilitar a LECTOR AMI los datos personales que se les
+              requieran con ocasión de rellenar cualquier formulario o correo de
+              contacto, sin perjuicio que se proceda a dar cumplimiento al deber
+              de información en cada uno de los medios a través de los que se
+              proceda a la recogida de datos de carácter personal.
+            </p>
+            <p>
+              LECTOR AMI declara su respeto y cumplimiento de las disposiciones
+              recogidas en el decreto 1377 del 2013 de la republica de Colombia.
+              El usuario responderá, en cualquier caso, de la veracidad de los
+              datos facilitados, reservándose LECTOR AMI, el derecho a excluir
+              de los servicios registrados a todo usuario que haya facilitado
+              datos falsos, sin perjuicio de las demás acciones que procedan en
+              derecho.
+            </p>
+            <p>
+              Usted queda informado que los datos que facilite a través de la
+              página web www.lectorami.com, LECTOR AMI utilizará esos datos para
+              el envío de información, para el envío de publicidad y para la
+              solicitud de información sobre productos y servicios y mejorar la
+              calidad del servicio.
+            </p>
+            <p>
+              Le informamos de la posibilidad de ejercer en cualquier momento
+              los derechos de acceso, rectificación, oposición y, en su caso,
+              cancelación de sus datos de carácter personal suministrados,
+              mediante petición escrita dirigida a LECTOR AMI en la Carrera 4f #
+              35-21 barrio Cadiz de la ciudad de Ibagué, Tolima, Colombia. O
+              expresándolo por escrito vía correo electrónico a
+              info@lectorami.com.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p class="text-left">
+              Copyright © 2020 Lector AMI. Todos los derechos reservados.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p class="text-right">
+              <a href="#" data-toggle="modal" data-target="#terminosdoc"
+                >Política de Privacidad</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/functions.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const emailAsesor = urlParams.get("asesor");
+
+        $("#asesor").val(emailAsesor);
+      });
+    </script>
+  </body>
+</html>

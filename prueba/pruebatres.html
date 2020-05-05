@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-lg-12">
+         <h3 class="text-center" id="titulo"></h3>
+          <button class="btn btn-primary btn-lg btn-block" id="btn-comenzar" style="display:none">Comenzar</button>
+          <div class="alert alert-info"  style="display:none">
+            <h4>Prueba de lectura no disponible</h4>
+            <ul>
+              <li>Tu ya haz presentado esta prueba</li> 
+            </ul>
+          </div>
+          <div class="alert alert-info" id="alertaSinCookis" style="display:none">
+            <h4>Prueba de lectura no disponible</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="test"  style="display: none">
+      <div class="text-center" id="tiempo" name="segundos"></div>
+      <div class="col-sm-12">
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title"> EL PÁJARO CARPINTERO </h5>
+            <p>El pájaro carpintero pertenece a la familia de los Pícidos en el orden de los Piciformes, de la que se conocen más de 212 especies distribuidas por todo el mundo, salvo en Oceanía. Presentan una conformación característica, con gran capacidad para trepar a los árboles y una especialización en la perforación de troncos de árboles y maderas, mediante el pico, con el objeto de extraer larvas e insectos que viven bajo las cortezas o en los troncos, y que les sirven de sustento. Sus patas son grandes y con dedos largos, dos hacia adelante y dos hacia atrás. Las uñas son largas, y constituyen una especie de ganchos que le sirve para sostenerse en los troncos verticales. A la vez en su constitución, y para poder golpear con el pico a modo de martillo, les sirve de apoyo la cola con timoneras rígidas y los músculos especiales que tienen la cabeza y el cuello, lo que hace que no doblen el cuello con facilidad. La lengua es larga (con una porción envuelta, que le permite sacarla a distancia de la boca) y retráctil. El pico fuerte y cónico termina en punta filosa.</p>   
+            <p>Su plumaje es abundante, de color negro, con zonas blancas, pardas o verdosas; los machos tienen en la cabeza algunas plumas rojas o amarillas. Anidan en agujeros de los árboles practicados por ellos mismos. Las hembras ponen varios  huevos blancos, muy frágiles y brillantes, sobre un colchón de maderitas y astillas podridas, las crías nacen ciegas y peladas. La especie que más abunda en Argentina y Chile, en todo el territorio es el Pitigüe, de plumaje negro y blanco, mide 35 centímetros, y hace cuevas en barrancos o en cercos y matorrales. Hacia la región noroeste aparece el Colpates Rupícola que a veces vive en grandes cactus en los que cava su nido, y se alimenta con larvas (a esta especie pertenecen el “pico verde” y el “Pico pardo”). Existen otras especies en América como el Carpintero que mide 18 centímetros.</p>
+            <button type="button" class="btn btn-block btn-success" id="btn-finalizar">Finalizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="questions" style="display: none" >
+      <div class="col-sm-12">
+        <div class="card">
+          <form id="form-questions" method="POST" action="phpmailer.php">
+            <input type="hidden" name="segundos"  id="segundos">
+            <input type="hidden" name="cantidad" value="333">
+            <div class="card-body">
+              <p class="font-weight-bold"> #1. ¿A qué familia pertenece el pájaro carpintero? </p>
+              <div class="form-check">
+                <input class="pregunta1 form-check-input" type="radio" required name="pregunta1" id="laradio" value="1">
+                <label class="form-check-label" for="laradio">Los Pícidos</label>
+              </div>
+              <div class="form-check">
+                <input class="pregunta1 form-check-input" type="radio" required name="pregunta1" id="Laimprenta" value="0">
+                <label class="form-check-label" for="Laimprenta"> Los Picicos </label>
+              </div>
+              <div class="form-check">
+                <input class="pregunta1 form-check-input" type="radio" required name="pregunta1" id="Eltelégrafo" value="0">
+                <label class="form-check-label" for="Eltelégrafo"> Las Aves de los Bosques  </label>
+              </div>
+              <div class="form-check">
+                <input class="pregunta1 form-check-input" type="radio" required name="pregunta1" id="Laescritura" value="0">
+                <label class="form-check-label" for="Laescritura"> Ninguno de los anteriores  </label>
+              </div>
+              <p class="font-weight-bold"> #2. ¿Cuántas especies aproximadamente hay distribuidas por el mundo? </p>
+              <div class="form-check">
+                <input class="form-check-input pregunta2" type="radio" required name="pregunta2" id="412" value="0">
+                <label class="form-check-label" for="412"> 412 </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta2" type="radio" required name="pregunta2" id="312" value="0">
+                <label class="form-check-label" for="312"> 312  </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta2" type="radio" required name="pregunta2" id="121" value="1">
+                <label class="form-check-label" for="121"> 212 </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta2" type="radio" required name="pregunta2" id="112" value="0">
+                <label class="form-check-label" for="112"> 112 </label>
+              </div>
+              <p class="font-weight-bold"> #3. ¿La especialización del pájaro carpintero consiste en? </p>
+              <div class="form-check">
+                <input class="form-check-input pregunta3" type="radio" required name="pregunta3" id="elpararrayos2" value="0">
+                <label class="form-check-label" for="elpararrayos2">Obtener frutas de los árboles</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta3" type="radio" required name="pregunta3" id="Laelectricidadnegativaypositiva" value="1">
+                <label class="form-check-label" for="Laelectricidadnegativaypositiva">Perforación de los troncos de los árboles y maderas</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta3" type="radio" required name="pregunta3" id="ladescargaelectrica" value="0">
+                <label class="form-check-label" for="ladescargaelectrica">Perseguir a los animales del bosque para atacarlos </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta3" type="radio" required name="pregunta3" id="Cargaelectrica" value="0">
+                <label class="form-check-label" for="Cargaelectrica"> Trepar con mucha facilidad por los árboles </label>
+              </div>
+              <p class="font-weight-bold"> #4. ¿Cómo son sus patas? </p>
+              <div class="form-check">
+                <input class="form-check-input pregunta4" type="radio" required name="pregunta4" id="Labibliotecapublica" value="1">
+                <label class="form-check-label" for="Labibliotecapublica"> Grandes y con dedos largos, dos hacia adelante y dos hacia atrás </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta4" type="radio" required name="pregunta4" id="LauniversidaddePensilvania2" value="0">
+                <label class="form-check-label" for="LauniversidaddePensilvania2">Pequeñas y afiladas uñas, dos hacia el lado derecho y dos hacia el izquierdo </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta4" type="radio" required name="pregunta4" id="Lasociedadfilosoficaamericana" value="0">
+                <label class="form-check-label" for="Lasociedadfilosoficaamericana"> Grandes y gordos dedos </label>
+              </div>
+              <p class="font-weight-bold"> #5. ¿Cómo se llaman las especies que mas habitan en Argentina y Chile? </p>
+              <div class="form-check">
+                <input class="form-check-input pregunta5" type="radio" required name="pregunta5" id="Pitime" value="0">
+                <label class="form-check-label" for="Pitime">Pitime </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta5" type="radio" required name="pregunta5" id="Pitigue" value="1">
+                <label class="form-check-label" for="Pitigue"> Pitigue </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input pregunta5" type="radio" required name="pregunta5" id="Pitife" value="0">
+                <label class="form-check-label" for="Pitife">Pitife</label>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-lg" id="send-results" type="submit">Enviar Resultados</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
+<script src="js/prueba.js"></script> 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

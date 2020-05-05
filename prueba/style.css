@@ -1,0 +1,39 @@
+#tiempo {
+  font-size:50px;
+  color: #013a71;
+  margin: auto;
+}
+.preguntas{
+    display: block;
+}
+#btn-comenzar{
+background:#013a71;
+border:1px solid #013a71;
+top: 50px;
+	
+position: relative;
+}
+h3{
+	color:#f00;
+	margin-top:50px
+}
+.envio{
+	background: #f2f2f2;
+	padding: 30px 40px;
+	margin-top: 50px;
+	border-radius: 8px;
+}
+#questions .card-body{
+	padding: 20px 40px;
+}
+ .card-body p{
+
+font-size: 18px;
+
+text-align: justify;
+
+font-weight: 400;
+}
+
+#questions button{
+	margin:20px;}

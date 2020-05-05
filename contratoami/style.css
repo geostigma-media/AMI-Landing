@@ -1,0 +1,83 @@
+body {
+  background: #eee !important;
+}
+#contrato {
+  height: 300px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  overflow-y: scroll;
+}
+#sinLogin{
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+    /* padding-top: 10%; */
+}
+#contenido {
+  height: auto;
+}
+#contenido h4{
+  
+text-transform: uppercase;
+}
+#texto {
+  padding: 4px;
+  background: #fff;
+}
+h1{
+	color:#134b7a;
+	font-weight: 700;
+}
+.error {
+  color: #ec1a24;
+}
+
+.formcontent {
+  background: #fff;
+  padding: 60px;
+  margin: 50px auto;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.bg-dark {
+    background: #367bc7 !important;
+}
+.bg-dark h2{
+	color:#fff;
+}
+.form-check{
+  background: rgba(248, 249, 250, 0.65);
+  margin-bottom:15px;
+  border-radius:2px;
+  border: 1px solid #e9ecef;
+  padding:7px;
+  display: block;
+}
+footer {
+  background: #0F417A;
+  padding: 15px 0 7px 0;
+  color: #fff;
+  font-size: 14px;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer a {
+  color: #dae0e5 !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+.whatsapp{
+	background: #25d366;
+	color: #fff;
+	display: block;
+	padding: 5px 25px;
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid #fff;
+}
+.whatsapp:hover{
+	color:#fff;
+	background: #28a958;
+	text-decoration:none;
+}
