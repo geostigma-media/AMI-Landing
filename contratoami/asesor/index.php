@@ -29,10 +29,11 @@ $users = $sentencia->fetchAll( PDO::FETCH_OBJ );
 <header class="sticky-top" id="headami">
   <div class="navbar navbar-dark bg-dark">
     <div class="container d-flex justify-content-between">
-      <div class="col-md-8"> <img src="../assets/img/logo.png" alt="logo lector ami virtual" /> </div>
-      <div class="col-md-4"><h2>Zona de Asesores</h2> 
-      <button class="btn btn-danger btn-sm" id="salir">Cerrar Sesion</button>
-    </div>
+      <div class="col-md-6"> <img src="../assets/img/logo.png" alt="logo lector ami virtual" /> </div>
+      <div class="col-md-6 text-right">
+        <h2>Zona de Asesores</h2>
+        <button class="btn btn-danger btn-sm" id="salir">Cerrar Sesion</button>
+      </div>
     </div>
   </div>
 </header>
@@ -81,34 +82,36 @@ $users = $sentencia->fetchAll( PDO::FETCH_OBJ );
       <div class="row">
         <div class="col-md-10 offset-md-2 formcontent">
           <h1>Contratos Registrados</h1>
-          <table class="table table-hover " id="tabla">
-            <thead>
-              <tr>
-                <th>Nombre completo</th>
-                <th>Numero de ID</th>
-                <th>Dirección</th>
-                <th>Telefono</th>
-                <th>Ciudad</th>
-                <th>email</th>
-                <th>asesor</th>
-                <th>fecha de contrato</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($users as $user) { ?>
-              <tr>
-                <td><?php echo $user->nombre; ?></td>
-                <td><?php echo $user->noIdentificacion; ?></td>
-                <td><?php echo $user->direccion; ?></td>
-                <td><?php echo $user->telefono; ?></td>
-                <td><?php echo $user->ciudad; ?></td>
-                <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->asesor; ?></td>
-                <td><?php echo $user->create_at; ?></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-hover " id="tabla">
+              <thead>
+                <tr>
+                  <th>Nombre completo</th>
+                  <th>Numero de ID</th>
+                  <th>Dirección</th>
+                  <th>Telefono</th>
+                  <th>Ciudad</th>
+                  <th>email</th>
+                  <th>asesor</th>
+                  <th>fecha de contrato</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($users as $user) { ?>
+                <tr>
+                  <td><?php echo $user->nombre; ?></td>
+                  <td><?php echo $user->noIdentificacion; ?></td>
+                  <td><?php echo $user->direccion; ?></td>
+                  <td><?php echo $user->telefono; ?></td>
+                  <td><?php echo $user->ciudad; ?></td>
+                  <td><?php echo $user->email; ?></td>
+                  <td><?php echo $user->asesor; ?></td>
+                  <td><?php echo $user->create_at; ?></td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +127,7 @@ $users = $sentencia->fetchAll( PDO::FETCH_OBJ );
   </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
 <script src="../assets/js/functions.js"></script> 
 <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
