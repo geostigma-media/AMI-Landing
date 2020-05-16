@@ -1,7 +1,8 @@
 <?php
 include 'conexion.php';
 header('Access-Control-Allow-Origin: *');
-require_once('PHPMailer/PHPMailerAutoload.php');
+use PHPMailer\PHPMailer\PHPMailer;
+require '../vendor/autoload.php';
 
 $nombre = $_POST['nombre'];
 $noIdentificacion = $_POST['noIdentificacion'];
@@ -13,7 +14,6 @@ $terminos = $_POST['terminos'];
 $terminosCompra = $_POST['terminosCompra'];
 $terminosCusro = $_POST['terminosCusro'];
 $asesor = $_POST['asesor'];
-$contrato = $_POST['contrato'];
 $sqlvalidar='SELECT * FROM  datos where email=?';
 $sentencia=$base_de_datos->prepare($sqlvalidar);
 $sentencia->execute(array($correo));
