@@ -31,6 +31,7 @@ $("#salir").click(function () {
   document.cookie = "rol =; expires= Thu, 01 Jan 1970 00:00:00 UTC;";
   window.location.replace("https://marketing.lectorami.co/contratoami/asesor/");
 });
+
 function contrato() {
   let nombre = $("#nombre").val();
   let date = new Date();
@@ -376,6 +377,7 @@ if ($("#formularioPago").length) {
         url: "savedata.php",
         data: $("#formularioPago").serialize(),
       }).done(function (data) {
+        alert("Su contrato ha sido registrado con éxito");
         window.location.replace("https://marketing.lectorami.co");
       });
     },
@@ -387,6 +389,17 @@ if ($("#formularioInfoPago").length) {
     rules: {
       nombreEstudiante: {
         required: true,
+      },
+      linkPago: {
+        required: true,
+      },
+      tipoContrato: {
+        required: true,
+      },
+      emailAsesor: {
+        required: true,
+        email: true,
+        minlength: 3,
       },
       emailEstudiante: {
         required: true,
@@ -404,7 +417,7 @@ if ($("#formularioInfoPago").length) {
       }).done(function (data) {
         alert("El correo se envio con exito");
         form.reset();
-		   $("#infopago").prop("disabled", false);
+        $("#infopago").prop("disabled", false);
       });
     },
   });

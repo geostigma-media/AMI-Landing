@@ -1,4 +1,5 @@
 <?php
+
 include 'conexion.php';
 header('Access-Control-Allow-Origin: *');
 use PHPMailer\PHPMailer\PHPMailer;
@@ -117,9 +118,9 @@ if(!$resultado){
       $mail->addAddress( $para, $nombre );
       $mail->Subject = $subject;
       $mail->MsgHTML( $mensaje );
-      $mail->send();
-      header('Location: https://marketing.lectorami.co');
-      exit;
+      if( $mail->send()) { 
+        echo "correo enviado con exito";
+      }
     }
   }
 }
